@@ -36,3 +36,15 @@ class test_activations_binary_step_function(unittest.TestCase):
         expected = 0
 
         self.assertEqual(output, expected)
+
+class test_activations_sigmoid_function(unittest.TestCase):
+
+    def setUp(self) -> None:
+        self.test_class = nn_activations()
+
+    def test_sigmoid_input_is_zero(self):
+        x = 0
+        output = self.test_class.sigmoid(x=x)
+        expected = 0.5
+
+        self.assertEqual(output, expected)
